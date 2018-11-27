@@ -1,0 +1,85 @@
+////
+/// @group config
+////
+
+/// Classic clearfix method
+/// @example scss - clearfix mixin
+///  @include clearfix;
+///  // content: "";
+///  // display: table;
+///  // clear: both;
+///  // border-collapse: collapse;
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    border-collapse: collapse;
+  }
+}
+/// Accessible mixin, use to hide element from the view
+/// letting them accessible for screen reading systems
+/// @example - visually-hidden scss
+///  @include visually-hidden;
+///  // position: absolute;
+///  // border: 0;
+///  // height: 1px;
+///  // width: 1px;
+///  // padding: 0;
+///  // overflow: hidden;
+///  // clip: rect(0, 0, 0, 0);
+@mixin visually-hidden {
+  position: absolute ;
+  border: 0 ;
+  height: 1px ;
+  width: 1px ;
+  padding: 0 ;
+  overflow: hidden ;
+  clip: rect(0, 0, 0, 0) ;
+}
+
+/// Set size to an element
+/// @param {string} $width
+/// @param {string} $height [$width]
+/// @example scss - size mixin
+///  @include size(14px, 20px);
+///  // width: 14px;
+///  // height: 20px;
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/// single line css position
+/// @param {string} $position
+/// @param {list} $args
+/// @example scss - _position mixin
+///  @include _position(absolute, top 10px left 20%);
+///  // position: absolute;
+///  // top: 10px;
+///  // left: 20%;
+/// @access private
+@mixin _position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i
+    and $i + 1 <= length($args)
+    and type-of( nth($args, $i + 1) ) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+/// Allow single line position
+/// @param {list} $args
+/// @example scss - absolute mixiin
+///  @include absolute(top 100% right 100%);
+///  // position: absolute;
+///  // top: 100%;
+///  // right: 100%;
+/// @author Hugo Giraudel
+/// @link http://hugogiraudel.com/2013/08/05/offsets-sass-mixin/
+@mixin absolute($args) {
+  @include _position(absolute, $args);
+}

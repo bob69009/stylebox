@@ -1,0 +1,50 @@
+////
+/// @group config
+/// @author Arthur Masson
+////
+
+/// Returns the opposite direction of every direction in `$directions`.
+/// @param {list} $directions - authorized values: <br>
+/// `top`, `bottom`, `right`, `left`, `ltr`, `rtl`
+/// @return {list | Null}
+/// @example scss - Opposite-direction function
+///   opposite-direction(top);
+///   // return: bottom
+/// @author Hugo Giraudel
+/// @link http://www.sitepoint.com/sass-mixins-kickstart-project/#opposite-direction
+@function opposite-direction($directions) {
+  $opposite-directions: ();
+  $direction-map: (
+          'top': 'bottom',
+          'right': 'left',
+          'bottom': 'top',
+          'left': 'right',
+          'ltr': 'rtl',
+          'rtl': 'ltr'
+  );
+
+  @each $direction in $directions {
+    $opposite-direction: map-get($direction-map, $direction);
+    @if $opposite-direction != null {
+      $opposite-directions: append($opposite-directions, #{$opposite-direction});
+    }
+    @else {
+      @warn "No opposite direction can be found for `#{$direction}`.";
+    }
+  }
+
+  @return $opposite-directions;
+}
+
+/// Parse integer from a value with a unit
+/// @author Hugo Giraudel
+/// @param {string} $n - example values: <br>
+/// `14px, 1.4rem, 1.4em, ...`
+/// @return {int}
+/// @example scss - parseInt function
+///   parseInt(14px)
+///   // 14
+///
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}

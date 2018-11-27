@@ -1,0 +1,45 @@
+/******************************************************************************************/
+/* == RULE   																			  */
+/******************************************************************************************/
+/* == @todo	: note/commentaire temporaire a supprimer apres livraison					  */
+/* == @bugfix : correction de bug	 													  */
+/* == @note	: commentaire                                                                 */
+/* == @acces : accessibilite		 													  */
+
+/* Info : définition de styles qui sont propre au contexte de projet */
+
+/******************************************************************************************/
+/* == SUMMARY																			  */
+/******************************************************************************************/
+/* == Knacss complement	(+ propriete)  													  */
+/* @note ne pas modifier ou surcharger les css de cette categorie						  */
+
+/* == Gesture / Accessibilite												  			  */
+/* == Responsive Web Design	(media queries)												  */
+/******************************************************************************************/
+
+/* ----------------------------- */
+/* == typography                 */
+/* ----------------------------- */
+
+/* Forms
+   ========================================================================== */
+
+button{
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+select,
+textarea,
+input{
+    border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+input[type="radio"]{
+	opacity: 0;
+	visibility: hidden;
+	width: 0;
+	height: 0;
+}

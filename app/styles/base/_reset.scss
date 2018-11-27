@@ -1,0 +1,134 @@
+/* ----------------------------- */
+/* == soft reset                 */
+/* ----------------------------- */
+
+/* switching to border-box model for all elements */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* height auto only for non SVG images */
+img:not([src$=".svg"]) {
+  height: auto;
+}
+
+blockquote,
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ----------------------------- */
+/* == typography                 */
+/* ----------------------------- */
+
+html {
+  /* set base font-size to equiv "10px", which is adapted to rem unit */
+  font-size: 62.5%;
+  /* IE9-IE11 math fixing. See http://bit.ly/1g4X0bX */
+  /* thanks to @guardian, @victorbritopro and @eQRoeil */
+  font-size: calc(1em * 0.625);
+}
+
+body {
+  font-size: $base-font-size;
+  background-color: $base-background;
+  color: $base-color;
+  font-family: $font-stack-common;
+  line-height: $line-height;
+}
+
+a {
+  color: $base-color-link;
+  text-decoration: none;
+  &:hover, &:focus, &:active {
+    color: $base-color-link-hover;
+  }
+}
+label {
+    &:focus {
+        box-shadow: 0px 0px 0 2px #A5C7E4 inset;
+        outline: none;
+    }
+}
+
+/* font-sizing for content */
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details,
+figure {
+  margin-top: 0.75em;
+  margin-bottom: 0;
+  line-height: $line-height;
+}
+
+/* ----------------------------- */
+/* == browsers consistency       */
+/* ----------------------------- */
+
+/* avoid top margins on first content element */
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+h1,
+.h1-like,
+h2,
+.h2-like,
+h3,
+.h3-like,
+h4,
+.h4-like,
+h5,
+.h5-like,
+h6,
+.h6-like {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+/* avoid margins on nested elements */
+li p,
+li .p-like,
+li ul,
+li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* max values */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video,
+svg {
+  max-width: 100%;
+}
+

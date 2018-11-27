@@ -1,0 +1,35 @@
+#main-footer {
+  @include rem(padding, 20px 0);
+    /**
+    * 44968 ajout de 60 px d'espace avant le footer de chaque page
+    **/
+  @include rem(margin-top,60px);
+  background-color: $grey-1;
+  .logo {
+    width: 40px;
+    max-height: 40px;
+  }
+  ul {
+    display: inline-block;
+    @include rem(padding,0px);
+    @include rem(margin-right,20px);
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+    &:after {
+      content: '-';
+      display: inline-block;
+      @include rem(margin, 0 5px 0 7px);
+    }
+    &:last-child:after{
+      display: none;
+    }
+    a {
+      @include rem(font-size,13px);
+      @include rem(line-height,15px);
+      color: $dark;
+      text-decoration: underline;
+    }
+  }
+}

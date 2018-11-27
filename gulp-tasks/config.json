@@ -1,0 +1,8 @@
+{
+  "src": "app/",
+  "toolbox": "toolbox/",
+  "dist": "output/",
+  "img": "portailDemo/images/",
+  "doc": "portailDemo/docs/",
+  "port": 9004
+}

@@ -1,0 +1,203 @@
+/******************************************************************************************/
+/* == RULE   																			  */
+/******************************************************************************************/
+/* == @todo	: note/commentaire temporaire a supprimer apres livraison					  */
+/* == @bugfix : correction de bug	 													  */
+/* == @note	: commentaire                                                                 */
+/* == @acces : accessibilite		 													  */
+
+/******************************************************************************************/
+/* == SUMMARY																			  */
+/******************************************************************************************/
+/* == Animations           																  */
+/* == Animations hide/show				    											  */
+/* == Animations Lightbox   															  */
+/* == Animations Translate X															  */
+
+/******************************************************************************************/
+
+/******************************************************************************************/
+/* == Animations           																  */
+/******************************************************************************************/
+
+.init-transition{
+	-webkit-transition: none;
+	    	transition: none;
+}
+
+.init-transform{
+	-webkit-transform: none;
+	    	transform: none;
+}
+
+.init-animation{
+	-webkit-animation: none;
+  			animation: none;
+}
+
+[data-tb-animate='inactif'],
+[data-tb-animate='inactif'] *{
+	-webkit-transition: none !important;
+	    	transition: none !important;
+	-webkit-animation: none !important;
+  			animation: none !important;
+}
+
+/******************************************************************************************/
+/* == Animations hide/show				    											  */
+/******************************************************************************************/
+
+[data-tb-animate='actif'] .effet-show{
+	opacity: 1;
+	-webkit-transition: opacity .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+			transition: opacity .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+[data-tb-animate='actif'] .effet-hide{
+	opacity: 0;
+	-webkit-transition: opacity .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+			transition: opacity .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+/******************************************************************************************/
+/* == Animations Lightbox   															  */
+/******************************************************************************************/
+
+/* @note animation sur les modal/popin (popin fullscreen)*/
+[data-tb-animate='actif'] .effet-open-modal-topToCenter{
+	-webkit-animation: open-translateTopToCenter backwards .6s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+			animation: open-translateTopToCenter backwards .6s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+}
+
+@-webkit-keyframes open-translateTopToCenter{
+	0% 		{ opacity: 0; -webkit-transform: translateY(-7%) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateY(0) translateZ(0); }
+}
+
+@keyframes open-translateTopToCenter{
+	0% 		{ opacity: 0; transform: translateY(-7%) translateZ(0); }
+	85%, 100%	{ transform: translateY(0) translateZ(0); }
+}
+
+[data-tb-animate='actif'] .effet-close-translateY-centerToBottom{
+	-webkit-animation: close-translateY2 forwards .4s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+			animation: close-translateY2 forwards .4s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+}
+
+@-webkit-keyframes close-translateY2{
+	0% 		{ -webkit-transform: translateY(0) translateZ(0); }
+	85%, 100% 	{ opacity: 0; -webkit-transform: translateY(7%) translateZ(0); }
+}
+
+@keyframes close-translateY2{
+	0% 		{ transform: translateY(0) translateZ(0); }
+	85%, 100% 	{ opacity: 0; transform: translateY(7%) translateZ(0); }
+}
+
+/******************************************************************************************/
+/* == Animations Translate Y															  */
+/******************************************************************************************/
+
+[data-tb-animate='actif'] .effet-open-translateY{
+	-webkit-animation: open-translateY backwards .6s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+			animation: open-translateY backwards .6s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+}
+
+@-webkit-keyframes open-translateY {
+	0% 		{ -webkit-transform: translateY(100%) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateY(0) translateZ(0); }
+}
+
+@keyframes open-translateY {
+	0% 		{ transform: translateY(100%) translateZ(0); }
+	85%, 100% 	{ transform: translateY(0) translateZ(0); }
+}
+
+[data-tb-animate='actif'] .effet-close-translateY{
+	-webkit-animation: close-translateY forwards .4s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+			animation: close-translateY forwards .4s cubic-bezier(0.39, 0.58, 0.57, 1); /*cubic-bezier(0.22, 0.61, 0.36, 1);*/
+}
+
+@-webkit-keyframes close-translateY {
+	0% 		{ -webkit-transform: translateY(0) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateY(100%) translateZ(0); }
+}
+
+@keyframes close-translateY {
+	0% 		{ transform: translateY(0) translateZ(0); }
+	85%, 100% 	{ transform: translateY(100%) translateZ(0); }
+}
+
+/******************************************************************************************/
+/* == Animations Translate X															  */
+/******************************************************************************************/
+
+/* Open : Left => Right */
+
+.effet-open-translateX-leftRight{
+	-webkit-animation: open-translateX-leftRight backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+			animation: open-translateX-leftRight backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+@-webkit-keyframes open-translateX-leftRight {
+	0% 		{ -webkit-transform: translateX(-100%) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateX(0) translateZ(0); }
+}
+
+@keyframes open-translateX-leftRight {
+	0% 		{ transform: translateX(-100%) translateZ(0); }
+	85%, 100% 	{ transform: translateX(0) translateZ(0); }
+}
+
+/* Close : Right => Left */
+
+.effet-close-translateX-rightLeft{
+	-webkit-animation: close-translateX-rightLeft forwards .5s cubic-bezier(0.39, 0.58, 0.57, 1);
+			animation: close-translateX-rightLeft forwards .5s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+@-webkit-keyframes close-translateX-rightLeft {
+	0% 		{ -webkit-transform: translateX(0) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateX(-100%) translateZ(0); }
+}
+
+@keyframes close-translateX-rightLeft {
+	0% 		{ transform: translateX(0) translateZ(0); }
+	85%, 100% 	{ transform: translateX(-100%) translateZ(0); }
+}
+
+/******************************************************************************************/
+
+/* Open : Right => Left */
+
+.effet-open-translateX-rightLeft{
+	-webkit-animation: open-translateX-rightLeft backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+			animation: open-translateX-rightLeft backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+@-webkit-keyframes open-translateX-rightLeft {
+	0% 		{ opacity: 0; -webkit-transform: translateX(100%) translateZ(0); }
+	85%, 100% 	{ -webkit-transform: translateX(0) translateZ(0); }
+}
+
+@keyframes open-translateX-rightLeft {
+	0% 		{ opacity: 0; transform: translateX(100%) translateZ(0); }
+	85%, 100% 	{ transform: translateX(0) translateZ(0); }
+}
+
+/* Close : Left => Right */
+
+.effet-close-translateX-leftRight{
+	-webkit-animation: open-translateX-leftRight backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+			animation: open-translateX-leftRight backwards .3s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+@-webkit-keyframes open-translateX-leftRight {
+	0% 		{ -webkit-transform: translateX(0) translateZ(0); }
+	85%, 100% 	{ opacity: 0; -webkit-transform: translateX(100%) translateZ(0); }
+}
+
+@keyframes open-translateX-leftRight {
+	0% 		{ transform: translateX(0) translateZ(0); }
+	85%, 100% 	{ opacity: 0; transform: translateX(100%) translateZ(0); }
+}

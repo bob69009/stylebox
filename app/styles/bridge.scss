@@ -1,0 +1,86 @@
+// 1. Config & helpers
+@import 'config/config';
+
+body * {
+  font-family: inherit;
+}
+/*:focus {
+  outline: auto;
+}*/
+
+.legacy {
+  box-sizing: content-box;
+  font-size:12.8px;
+  font-family: Arial;
+
+  #main & .cmdcheque .liens {
+    li {
+      background-color: $grey-2;
+      .btn_crt {
+        strong {
+          color: $dark;
+        }
+      }
+    }
+  }
+  .inforesume {
+    strong {
+      font-size: 26px;
+    }
+    #main & .help.img {
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  .account-list {
+    @include clearfix;
+    border-top: 1px solid $grey-2;
+  }
+  .account-list__select {
+    @include clearfix;
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    select {
+      float: left;
+    }
+    button {
+      float: left;
+      text-transform: uppercase;
+      padding: 7px;
+      background-color: $primary-color;
+      color: $light;
+      border:none;
+    }
+  }
+  .account-list__action {
+    margin-top: 10px;
+    float: right;
+    ul {
+      li {
+        display: inline-block;
+        i {
+          margin-right: 5px;
+        }
+        a {
+          text-decoration: underline;
+        }
+        & + li {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+// Buttons
+.button, .alert__close{
+  // Override button border on focus, in docroot/default.css
+  &:focus {
+    border: none!important;
+  }
+}

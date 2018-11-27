@@ -1,0 +1,125 @@
+.alert {
+    display: block; 
+    @include rem(max-width,940px);
+    @include rem(padding,11px 0);
+    border-top:1px solid $grey-2;
+    border-bottom: 1px solid $grey-2;
+    @media screen and (min-width: 1000px) {
+        @include rem(margin,0px auto 20px auto);
+      } 
+    @media screen and (max-width: 999px) {
+        @include rem(margin,0px 20px 20px 20px);
+      } 
+  .alert__body, .alert__notif {
+    margin: 0;
+      font-weight: bold;
+      @include rem(font-size,14px);
+    @include rem(padding-right,38px);
+    line-height: 1.4;
+      span {
+        font-weight: normal;
+        @include rem(font-size,11px);
+        @include rem(margin-left,15px);
+        color: $grey-6; 
+        font-style: italic;
+      } 
+      &.regular {
+          font-weight: normal;
+      }
+  }
+    .alert__notif {
+        @include rem(line-height,23px);
+        span {
+            @include rem(margin-left,0px);
+            color:$color-blue;
+            @include rem(font-size,14px);
+            font-weight: bold;
+            & + span {
+                @include rem(margin-left,14px);
+                i {
+                    position: relative;
+                    top:2px;
+                    @include rem(font-size,16px);
+                }
+                a:hover {
+                    text-decoration: none;
+                } 
+            }
+          }
+    }
+  .alert__close {
+    border: none;
+    background: none;
+    line-height: 1;
+    padding: 0;
+    color: inherit;
+    text-decoration: none;
+    position: absolute;
+    right: 12px;
+    top:1px; 
+    &, .ss-icon {
+      @include rem(font-size,18px);
+    } 
+  } 
+  &.alert--primary {
+    background-color: $primary-color;
+    color: $light;
+  }
+  &.alert--secondary {
+    background-color: $secondary-color;
+    color: $light;
+  }
+  &.alert--error {
+    background-color: $red-color;
+    color: $light;
+  }
+    &.alert--notif {
+        background-color: $grey-1;
+        border:none; 
+        @include rem(padding,11px 20px); 
+        i { 
+            @include rem(margin-right,14px);
+            position: relative;
+            bottom: -6px; 
+            @include rem(font-size,20px);
+        }
+        span {
+              font-style:normal;
+          }
+    }
+    .content {
+         @include rem(padding,0 10px); 
+    } 
+    & + .alert {  
+        @include rem(margin,20px 0);
+    }
+}
+
+.modal .info {
+  @include rem(padding,30px 0);
+}
+
+.content .info {
+  @include rem(padding,0 0 30px 0);
+  &.noBorder {
+      border:none;
+      @include rem(padding-top,30px);
+  }
+}
+
+.info {
+  border-bottom: 1px solid $grey-2;
+  @include rem(margin-bottom,35px);
+  i.icon-important {
+    color:$primary-color;
+    @include rem(font-size,45px);
+    @include rem(padding-right,20px);
+  }
+  [class*="col-"] {
+    vertical-align: middle;
+    display: table-cell;
+  }
+  p {
+    @include rem(margin,0px);
+  }
+}

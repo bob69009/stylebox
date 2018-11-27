@@ -1,0 +1,79 @@
+/* ----------------------------- */
+/* == All colors             */
+/* ----------------------------- */
+////
+/// @group colors
+////
+
+/// Primary color
+/// @type Color
+$primary-color: #17479E;
+
+/// Secondary color
+/// @type Color
+$secondary-color: #0C2B77;
+
+/// Primary color:hover
+/// @type Color
+$color-blue:#136CBD;
+
+/// Green
+/// @type Color
+$green-color: #447900;
+
+/// Red
+/// @type Color
+$red-color: #D0141B;
+$red-pros: #831745;
+
+/// Dark
+/// @type Color
+$dark: #000000;
+
+/// Light
+/// @type Color
+$light: #FFFFFF;
+
+/// Grey 1 
+/// @type Color
+$grey-1: #F2F2F2;
+
+/// Grey 2
+/// @type Color
+$grey-2: #E4E4E4;
+
+/// Grey 3
+/// @type Color
+$grey-3: #6E6E6E;
+
+/// Grey 4
+/// @type Color
+$grey-4: #363636;
+
+/// Grey 5
+/// @type Color
+$grey-5: #080808;
+
+/// Grey 6
+/// @type Color
+$grey-6: #373737;
+
+
+/// Banner color
+/// @type Color
+$banner-color: #404040;
+
+$radio-border-color: #C9C9C9;
+
+/// Products colors
+/// @type Map
+$products: (
+        loan: (color-1:#C34412,color-2:#A73B04,color-3:#933302),
+        credit: (color-1:#007F79,color-2:#006C67,color-3:#004f4b),
+        banq: (color-1:#D12566,color-2:#B41E57,color-3:#960a3f),
+        saving: (color-1:#136CBD,color-2:#1258A3,color-3:#074180),
+        insurance: (color-1:#388514,color-2:#2C7203,color-3:#205700)
+);
+/// Base font color
+/// @type Color
+$base-color: $dark;

@@ -1,0 +1,101 @@
+<div class="headerblock"></div>
+<header id="header-main" role="banner">
+    <div class="header__profile">
+        <div class="content" role="banner">
+            <div class="nav-profile">
+                <ul>
+                    <li>
+                        Lorem ipsum
+                    </li>
+                    <li class="faq-search">
+                        <a href="#" class="faq__link__old" data-toggle="modal" data-target="#modalaide"><i aria-hidden="true" class="icon-help"></i> <span>Aide</span></a>
+                    </li>
+                    <li class="profile collapse"><a id="collapse" href="#collapse-body" data-toggle="collapse"
+                                                    class="collapse__toggle dropdown-trigger" aria-haspopup="true"
+                                                    aria-expanded="false" aria-owns="profil-nav"
+                                                    aria-controls="profil-nav"> <i aria-hidden="true"
+                                                                                   class="icon-user"></i> <span>My profile</span>
+                        <span class="visually-hidden">Déplier le menu</span> </a>
+                        <div id="collapse-body" class="collapse__body">
+                            <ul class="dropdown-menu dropdown-menu--primary" aria-labelledby="collapse">
+                                <li class="dropdown-menu__menuitem"><a href="#">item 1</a></li>
+                                <li class="dropdown-menu__menuitem"><a href="#">item 2</a></li>
+                                <li class="dropdown-menu__menuitem"><a href="#">item 3</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" title="Déconnexion de l'Espace Client" class=""><span class="visually-hidden">Disconnect</span><i
+                            class="icon-power" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <nav id="menu" class="header__nav" role="navigation">
+        <div class="content">
+            <ul>
+                <li>
+                    <a href="#" class="active">
+                        <span class="item">
+                            Item 1
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="item">
+                            Item 2
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="X messages en attente dans votre messagerie sécurisée">
+                        <span class="item"><span>Item  3</span> </span>
+                        <span class="visually-hidden">3 awaiting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"> 
+                        <span class="item">Item 4</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="header-bar"></div>
+<div class="alert" role="alert"> 
+    <div class="content">
+        <p class="alert__body regular">
+           Maximus legrand <span><a href="#" class="inactive-link">last connexion on 16 march 2017 at 11:40am</a></span>
+        </p>
+        <a href="#" class="alert__close" title="Supprimer le bandeau de connexion">
+            <span class="visually-hidden">hide</span><i class="icon-cross" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+<div class="modal" id="modalaide" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-releves" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" title="Fermer cette fenêtre"><i class="icon-cross" aria-hidden="true"></i></button>
+                <h1 class="modal-title" id="modalLabel1">Help</h1>
+            </div>
+            <div class="modal-body email-form" >
+                <form action="#" class="search-bar" role="search">
+                    <div class="input-wrapper">
+                        <label for="faqVal" class="visually-hidden">keywords</label>
+                        <input id="faqVal" tabindex="-1" placeholder="ex: how to code ?"
+                               type="text" class="input typeahead">
+                    </div>
+                    <div class="input-wrapper">
+                        <button tabindex="-1" data-toggle="modal" data-target="#modal"
+                                class="button button--primary" type="button">SEARCH
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

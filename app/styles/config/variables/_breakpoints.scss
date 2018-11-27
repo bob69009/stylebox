@@ -1,0 +1,30 @@
+/* ----------------------------- */
+/* == breakpoints                */
+/* ----------------------------- */
+////
+/// @group breakpoints
+////
+
+/// Portrait
+$breakpoint-portrait: 768px;
+$breakpoint-wide: 1000px;
+/// Landscape
+$breakpoint-landscape: 1024px;
+
+/// Portrait min, < Portrait
+/// @requires {variable} breakpoint-portrait
+$breakpoint-portrait-min: $breakpoint-portrait + 1;
+/// Landscape min, < Landscape
+/// @requires {variable} breakpoint-landscape
+$breakpoint-landscape-min: $breakpoint-landscape + 1;
+
+/// Portrait min, > Portrait
+/// @requires {variable} breakpoint-portrait
+$breakpoint-portrait-max: $breakpoint-portrait - 1;
+/// Landscape min, > Landscape
+/// @requires {variable} breakpoint-landscape
+$breakpoint-landscape-max: $breakpoint-landscape - 1;
+
+/// Portrait min, < Portrait
+/// @group wrappers
+$site-wrapper: 98rem;

@@ -1,0 +1,273 @@
+/* Primer Styleguide | MIT license | http://primercss.io/ */
+@import "primer/primer.css";
+
+/* Git Icons | MIT license | https://octicons.github.com/ */
+@import "octicons/octicons.css";
+
+/* Syntax Highlighter | MIT license | http://prismjs.com/ */
+@import "prism/prism.css";
+
+/* Layout */
+.guideNEC .one-fourth.column {
+	  position: relative;
+}
+.guideNEC .three-fourths.column {
+	  margin-left: 237px;	
+}
+.guideNEC .menu {
+	  position: fixed;
+}
+
+/* En-tête */
+.guideNEC .header {
+	margin-bottom: 2em;
+	padding: 1em;
+	color: #FFF;
+	background-color: #0054A4;
+}
+.guideNEC .header .container {
+	margin-bottom: -0.5em;
+}
+.guideNEC .header .container .octicon {
+	color: #B7D2EB;
+	font-size: 4.5rem;
+}
+.guideNEC .header .info {
+	vertical-align: middle;
+}
+
+/* Titre */
+.guideNEC .header .container span {
+	display: inline-block;
+	vertical-align: middle;
+}
+#NEC-Toolbox.guideNEC .header .nec {
+	font-size: 60px;
+	font-weight: bold;
+	color: #66B5E5;
+}
+.guideNEC .header .toolbox {
+	color: #FFF;
+	text-transform: uppercase;
+}
+
+
+/* Menu */
+.guideNEC .menu-item.selected {
+	color: #0054A4;
+}
+.guideNEC .menu-item.selected::before {
+	background-color: #FDCB12;
+}
+.guideNEC .menu-item {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    border-color: #EEE;
+}
+.guideNEC .tabnav-tab:hover,
+.guideNEC .menu-item:hover {
+	padding-bottom: 8px;
+}
+.guideNEC .submenu {
+	margin-left: 1em;
+	margin-bottom: 1em;
+	border-left: 1px solid #EEE;
+	border-bottom: 1px solid #EEE; 
+}
+
+/* Conteneurs */
+.guideNEC .main.container {
+	clear: both;
+}
+.guideNEC .clear,
+.guideNEC .container {
+	clear: both;
+}
+.guideNEC .column > .doc-bloc {
+	padding: 1em;
+	border: 1px solid #DDD;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.guideNEC .doc-bloc > h2:first-child {
+	font-size: 2.5rem;
+	line-height: normal;
+}
+.guideNEC .column > .doc-bloc + .doc-bloc {
+	margin-top: 3em;
+}
+.guideNEC img[alt="KNACSS"] {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50px;
+}
+
+/* Onglets */
+.guideNEC .tabnav-tab {
+	font-size: 1.4rem;
+}
+.guideNEC .tabnav-tab:hover,
+.guideNEC .tabnav-tab.selected {
+	border-bottom: none;
+}
+.guideNEC .tabcontent {
+	display: none;
+}
+.guideNEC .tabcontent.active {
+	display: block;
+}
+
+/* Dépliants */
+.guideNEC .doc-toggle {
+	margin: 0;
+	margin-bottom: -1px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	text-transform: none;
+	font-size: 1.5rem;
+	font-family: 'AvenirLTStdRoman', Arial, Helvetica, sans-serif;
+	color: #6E6E6E;
+	border-bottom: 1px dotted #DDD;
+	cursor: pointer;
+}
+.guideNEC .doc-toggle + div {
+	display: none;
+}
+.guideNEC .doc-toggle::before {
+	content: "\25BE";
+	display: inline-block;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	font-size: 1.1em;
+}
+.guideNEC .doc-toggle,
+.guideNEC .doc-toggle::before {
+	-webkit-transition: all 0.8s; /* Safari */
+    transition: all 0.8s;
+}
+
+/* Dépliants : ouverts */
+.guideNEC .doc-toggle.opened {
+	border-bottom: none;	
+}
+.guideNEC .doc-toggle.opened,
+.guideNEC .doc-toggle.opened::before {
+	color: #FFF;
+	text-transform: uppercase;
+	background-color: #0054A4;
+}
+.guideNEC .doc-toggle.opened + div {
+    overflow: hidden;
+	margin-bottom: 1em;
+	padding: 1em;
+	border: 1px dotted #DDD;
+	border-width: 0 0 1px 1px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+}
+.guideNEC .doc-toggle.opened::before {
+	content: "\25B4";
+}
+
+
+/* Contenus */
+.guideNEC .list-components > li + li {
+	margin-top: 0.5em;
+	padding-top: 0.5em;
+	border-top: 1px dotted #DDD;
+}
+.guideNEC .list-components li ul {
+	margin-left: 1em;
+}
+.guideNEC .legend {
+	margin-bottom: 1em;
+	font-size: 1.9rem;
+	text-align: right;
+	color: #555;
+	border-bottom: 1px dotted #D7D7D7;
+}
+.guideNEC .legend + div h1,
+.guideNEC .legend + div h2,
+.guideNEC .legend + div h3 {
+	margin-bottom: 0;
+}
+.guideNEC .size-legend {
+	font-size: 80%;
+	opacity: 0.5;
+}
+
+/* Couleurs */
+.guideNEC .color-blocs {
+	text-align: center;
+}
+.guideNEC .color-bloc {
+	position: relative;
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	line-height: 90px;
+	text-align: center;
+	color: #FFF;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.guideNEC .color-code {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
+	text-align: center;
+}
+.guideNEC .color-info {
+	position: absolute;
+	top: calc(50% - 22px); left: 0;
+	width: 100%; padding: 15px;
+	line-height: normal;
+	background-color: #000;
+}
+
+/* Pictos */
+.guideNEC .picto-blocs [class^=picto-]::after,
+.guideNEC .picto-blocs [class^=picto-] {
+	display: inline-block;
+}
+
+.guideNEC .picto-blocs [class^=picto-] {
+	position: relative;
+	margin-bottom: 4.5rem;
+	font-size: 0;
+	text-align: center;
+	
+}
+.guideNEC .picto-blocs [class^=picto-]::before {
+	line-height: 4.5rem;
+	font-size: 4.5rem;
+}
+.guideNEC .picto-blocs [class^=picto-]::after {
+	content: attr(class);
+	left: 0; bottom: -4.5rem;
+	width: 100%;
+	padding: 5px 10px;
+	font-size: 1.2rem;
+	background-color: #DCDCDC;
+	border-left: 1px solid Dimgray;
+}
+
+/* Footer */
+.guideNEC .footer {
+	margin-top: 2em;
+	padding: 1em;
+	color: #FFF;
+	background-color: #0054A4;
+}
+.guideNEC .changelog {
+	margin-left: 1.3em;
+	font-size: 0.8em;
+}
+
+.guideNEC .visuel-infobulle {
+	position: relative;
+	height: 450px;
+}

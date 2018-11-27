@@ -1,0 +1,68 @@
+/******************************************************************************************/
+/* == RULE   																			  */
+/******************************************************************************************/
+/* == @todo	: note/commentaire temporaire a supprimer apres livraison					  */
+/* == @bugfix : correction de bug	 													  */
+/* == @note	: commentaire                                                                 */
+/* == @acces : accessibilite		 													  */
+
+/* Info : chaque définition de styles devra commencer par .device-android pour être  
+utilisé que sur ce device. Possibilité de d'être plus précis en fonction de la version :
+
+    .device-android6p : Android 6 >=
+    .device-android5p : Android 5 >=
+    .device-android44p : Android 4.4.x >=
+    .device-android43p : Android 4.3 >= 
+    .device-android422p : Android 4.2.2 >=
+    .device-android422m : Android 4.2.2 <
+
+Réf des classes spécifiques fichier devices.js
+
+*/
+
+/******************************************************************************************/
+/* == SUMMARY																			  */
+/******************************************************************************************/
+/* == Android specifique - Knacss complement                                              */
+
+/******************************************************************************************/
+
+/******************************************************************************************/
+/* == Android specifique - Knacss complement                                              */
+/******************************************************************************************/
+
+/* old standard (Flexbox 2009) : Android < 4.4.x */
+
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-container,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-container > *,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex > *{
+	display:-webkit-box;
+    display:box;
+}
+
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-container-h,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-h{
+	-webkit-box-orient:horizontal;
+            box-orient:horizontal;
+}
+
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-container.flex-container-v > *,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-container-v,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex.flex-v > *,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-v{
+	-webkit-box-orient:vertical;
+            box-orient:vertical;
+}
+
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-item-first,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-start{
+	-webkit-box-ordinal-group: 1;
+            box-ordinal-group: 1;
+}
+
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-item-last,
+.device-android:not(.device-android44p):not(.device-android5p):not(.device-android6p) .flex-end{
+	-webkit-box-ordinal-group: 42;
+            box-ordinal-group: 42;
+}

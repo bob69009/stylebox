@@ -1,0 +1,26 @@
+.glyph-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.glyph {
+    flex: 1;
+    min-width: 140px;
+    padding: .5rem;
+    text-align: center;
+}
+
+.glyph [class*='icon-'] {
+    display: inline-block;
+    padding: 0.8rem;
+    min-width: 38px;
+    min-height: 38px;
+    line-height: 22px;
+    border-radius: 100px;
+    box-shadow: 0 0 5px rgba(50, 50, 50, 0.5);
+}
+
+.glyph [class*='icon-'] + span {
+    display: block;
+    margin-top: .4rem;
+}

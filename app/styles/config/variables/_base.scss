@@ -1,0 +1,45 @@
+/* ----------------------------- */
+/* == Base variables             */
+/* ----------------------------- */
+////
+/// @group base
+////
+
+/// text font-size on body and content
+/// @type var
+$base-font-size: 1.3rem;
+
+/// common font
+/// @type var
+/// @requires {variable} font-base
+$font-stack-common: $font-base;
+
+/// common line-height
+/// @type var
+$line-height: 1.44;
+
+/// text color on body and content
+/// @type color
+/// @requires {variable} dark
+$base-color: $dark;
+
+
+/// default link color
+/// @type color
+$base-color-link: #333;
+
+/// default link :hover color
+/// @type color
+/// @requires {variable} dark
+$base-color-link-hover: $dark;
+
+/// Base background color
+/// @type color
+/// @requires {variable} light
+$base-background: $light;
+
+/// h1 & h2 basic font
+/// @type var
+/// @requires {variable} font-lato-heavy
+$font-stack-headings: $font-lato-heavy;
+

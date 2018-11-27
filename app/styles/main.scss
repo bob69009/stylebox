@@ -1,0 +1,29 @@
+
+// 1. Config & helpers
+@import 'config/config';
+
+// 2. Vendors
+@import "vendors/bootstrap/bootstrap";
+
+// 3. Base
+@import
+  'base/normalize',
+  'base/reset',
+  'base/fonts',
+  'base/font-icons';
+
+// 4. Layout
+@import
+  'layout/header',
+  'layout/home',
+  'layout/footer';
+
+// 5. Components
+@import
+  'components/alert',
+  'components/tooltip',
+  'components/bootstrap-modal';
+
+// 6. Pages
+@import
+  'pages/home';

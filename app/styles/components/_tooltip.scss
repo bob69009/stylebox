@@ -1,0 +1,58 @@
+.tooltip.right {
+    padding: 0 5px;
+    margin-left: 3px;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    line-break: auto;
+    margin-top: -1.2em;
+    @include rem(padding,20px 30px);
+    border: 1px solid $primary-color;
+    background: $light;
+    font-size: 1.3rem;
+    @include rem(font-size, 13px);
+    font-family: $font-base;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom: 0;
+      }
+  &:before {
+    bottom: -11px;
+    left: 159px;
+    border-top-color: $primary-color;
+    border-width: 11px;
+  }
+  &:after {
+    bottom: -10px;
+    left: 160px;
+    border-top-color: $light;
+    border-width: 10px;
+  }
+    &.right .tooltip-arrow {
+            @include triangle(
+                    $direction: left,
+                    $position: left 0rem top -1rem,
+                    $color: $primary-color,
+                    $size: 0.9rem
+            );
+            @include rem(margin-top,-8px);
+    }
+  .tooltip-inner {
+        width: 278px;
+        p {
+            margin:0 0 10px 0;
+        }
+    }
+}
+
+
+

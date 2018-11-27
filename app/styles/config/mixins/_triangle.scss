@@ -1,0 +1,82 @@
+////
+/// @group config
+/// @author Arthur Masson
+////
+
+/// Use it to draw a CSS triangle
+/// @param {string} $direction - authorized values: <br>
+/// `top right bottom left`
+/// @param {list} $position - multi-properties css position example: `top 100% left 40px`
+/// @param {string} $color [currentColor] - triangle color
+/// @param {string} $size [1em] - triangle size
+/// @example scss - triangle mixin
+///   @include triangle(
+///     $direction: top,
+///     $position: bottom 100% right 2rem,
+///     $color: #F2F2F2,
+///     $size: .8rem
+///   );
+///   // right: 2rem;
+///   // bottom: 100%;
+///   // position: absolute;
+///   // width: 0;
+///   // height: 0
+///   // content: '';
+///   // z-index: 2;
+///   // border-bottom: .8rem solid #F2F2F2;
+///   // border-left: .8rem solid transparent;
+///   // border-right: .8rem solid transparent;
+///
+@mixin triangle($direction, $position, $color: currentColor, $size: 1em) {
+  // Make sure the direction is valid
+  @if not index(top right bottom left, $direction) {
+    @warn "Direction must be one of top, right, bottom or left.";
+  }
+
+  @else {
+    @include absolute($position); // Position
+    @include size(0); // Size
+    content: '';
+    z-index: 2;
+
+    border-#{opposite-direction($direction)}: $size solid $color;
+    $perpendicular-borders: $size solid transparent;
+
+    @if $direction == top or $direction == bottom {
+      border-left:   $perpendicular-borders;
+      border-right:  $perpendicular-borders;
+    }
+
+    @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top:    $perpendicular-borders;
+    }
+  }
+}
+
+@mixin triangleborder($direction, $position, $color: currentColor, $size: 1em) {
+  // Make sure the direction is valid
+  @if not index(top right bottom left, $direction) {
+    @warn "Direction must be one of top, right, bottom or left.";
+  }
+
+  @else {
+    @include absolute($position); // Position
+    @include size(0); // Size
+    content: '';
+    z-index: 1;
+
+    border-#{opposite-direction($direction)}: $size solid $color;
+    $perpendicular-borders: $size solid transparent;
+
+    @if $direction == top or $direction == bottom {
+      border-left:   $perpendicular-borders;
+      border-right:  $perpendicular-borders;
+    }
+
+    @else if $direction == right or $direction == left {
+      border-bottom: $perpendicular-borders;
+      border-top:    $perpendicular-borders;
+    }
+  }
+}

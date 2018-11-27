@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "lbp-pictos";
+  src:url("fonts/lbp-pictos.eot");
+  src:url("fonts/lbp-pictos.eot?#iefix") format("embedded-opentype"),
+    url("fonts/lbp-pictos.woff") format("woff"),
+    url("fonts/lbp-pictos.ttf") format("truetype"),
+    url("fonts/lbp-pictos.svg#lbp-pictos") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "lbp-pictos" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="picto-"]:before,
+[class*=" picto-"]:before {
+  font-family: "lbp-pictos" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.picto-abb:before {
+  content: "v";
+}
+.picto-ab:before {
+  content: "1";
+}
+.picto-alb:before {
+  content: "<";
+}
+.picto-al:before {
+  content: "2";
+}
+.picto-arb:before {
+  content: ">";
+}
+.picto-ar:before {
+  content: "3";
+}
+.picto-atb:before {
+  content: "^";
+}
+.picto-at:before {
+  content: "4";
+}
+.picto-assu:before {
+  content: "E";
+}
+.picto-banq:before {
+  content: "B";
+}
+.picto-burger:before {
+  content: "=";
+}
+.picto-date:before {
+  content: "l";
+}
+.picto-card:before {
+  content: "-";
+}
+.picto-info:before {
+  content: "i";
+}
+.picto-infobig:before {
+  content: "I";
+}
+.picto-immo:before {
+  content: "A";
+}
+.picto-exclaim:before {
+  content: "!";
+}
+.picto-arrow:before {
+  content: "#";
+}
+.picto-cross:before {
+  content: "x";
+}
+.picto-crossb:before {
+  content: "X";
+}
+.picto-conso:before {
+  content: "C";
+}
+.picto-check:before {
+  content: "5";
+}
+.picto-checkb:before {
+  content: "V";
+}
+.picto-chart:before {
+  content: "P";
+}
+.picto-change:before {
+  content: "~";
+}
+.picto-cb:before {
+  content: "z";
+}
+.picto-pencil:before {
+  content: "p";
+}
+.picto-euro:before {
+  content: "\20ac";
+}
+.picto-load:before {
+  content: "&";
+}
+.picto-round:before {
+  content: "o";
+}
+.picto-search:before {
+  content: "s";
+}
+.picto-time:before {
+  content: "@";
+}
+.picto-circle:before {
+  content: "O";
+}

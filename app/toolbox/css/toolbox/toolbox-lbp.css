@@ -1,0 +1,257 @@
+.lbptool-latoRegular {
+    font-family: 'LatoRegular';
+    src: url("../../fonts/Lato-Regular.eot"), url("../../fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Lato-Regular.woff2") format("woff2"), url("../../fonts/Lato-Regular.woff") format("woff"), url("../../fonts/Lato-Regular.ttf") format("truetype"), url("../../fonts/Lato-Regular.svg#LatoRegular") format("svg");
+}
+
+.lbptool-latoBold{
+    font-family: 'LatoBold';
+}
+
+.lbptool-latoBlack{
+    font-family: 'LatoBlack';
+}
+
+.lbptool-arial, .Arial {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ----------------------------- */
+/* == titles:                    */
+/* ----------------------------- */
+
+.lbptool-slim {
+	font-weight: normal;
+}
+
+.lbptool-title-p {
+    display: block;
+    margin: 0;
+    padding: 3.2rem 3rem;
+    width: 90%;
+    font-family: LatoBold, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-size: 2.4rem;
+    line-height: 26px;
+    line-height: 2.6rem;
+    color: #FFF;
+}
+
+.lbptool-title-s1 {
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 15px;
+    line-height: 1.5rem;
+}
+
+[class*='--upper'] {
+    text-transform: uppercase;
+}
+
+[class*='--bold'] {
+    font-weight: bold;
+}
+/* ----------------------------- */
+/* == buttons:                   */
+/* ----------------------------- */
+
+.lbptool-btn-p,
+.lbptool-btn-s {
+    display: inline-block;
+    min-width: 220px;
+    min-width: 22rem;
+    width: 22rem;
+    height: 6rem;
+    background-color: #17479E;
+    color: #FFF;
+    font-size: 13px;
+    font-size: 1.3rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 1.55rem;
+    text-align: center;
+    border: 0;
+    font-family: LatoBold, Arial, Helvetica, sans-serif;
+}
+
+.lbptool-btn-s {
+    background-color: #F2F2F2;
+    color: #000;
+    line-height: 28px;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: none;
+}
+
+.lbptool-btn-p:hover,
+.lbptool-btn-p:focus,
+.lbptool-btn-p.active {
+    background-color: #0C2B77;
+    text-decoration: none!important;
+}
+
+.lbptool-btn-s:hover,
+.lbptool-btn-s:focus,
+.lbptool-btn-s.active {
+    background-color: #E4E4E4;
+    text-decoration: none!important;
+}
+
+[class*="lbptool-btn"][class*="--double"] {
+    padding: .8rem 1rem .4rem 1rem;
+    word-wrap: break-word;
+    white-space: inherit;
+    text-overflow: inherit;
+}
+
+[class*="lbptool-btn"][disabled] {
+    opacity: .5;
+    -webkit-filter: none;
+    filter: none;
+}
+/* ----------------------------- */
+/* == forms:                     */
+/* ----------------------------- */
+
+.lbptool-label {
+    margin-top: .75em;
+    margin-bottom: 0;
+    line-height: 1.44;
+}
+
+.lbptool-input,
+.lbptool-textarea,
+.lbptool-select select {
+    width: 100%;
+    padding: 1.55rem;
+    border: 1px solid #E4E4E4;
+    font-size: 15px;
+    font-size: 1.5rem;
+}
+
+.lbptool-radio {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding-left: 30px;
+}
+
+.lbptool-radio input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.lbptool-radio q {
+    quotes: none;
+    line-height: 25px;
+}
+
+.lbptool-radio .check {
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    left: 4.5px;
+    top: 7px;
+    border-radius: 50%;
+    background-color: #17479E;
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0);
+}
+
+.lbptool-radio .circle {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: block;
+    border: 1px solid #C9C9C9;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+}
+
+.lbptool-radio input:checked ~ .check {
+    -webkit-transform: scale3d(.55, .55, .55);
+    transform: scale3d(.55, .55, .55);
+}
+
+.lbptool-checkbox label {
+    margin-top: 0;
+}
+
+.lbptool-checkbox input {
+    margin-top: 2px;
+}
+
+.lbptool-select {
+    position: relative;
+}
+
+.lbptool-select select {
+    line-height: 1.2rem
+}
+
+.lbptool-select i {
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 1.5rem;
+}
+/* ----------------------------- */
+/* == table:                     */
+/* ----------------------------- */
+
+.lbptool-table .row .col:nth-child(1) {
+    width: 20rem;
+    font-weight: 700;
+    padding: 30px 0!important;
+}
+
+.lbptool-table .row .col {
+    display: table-cell;
+    line-height: 1.5rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.lbptool-table .row:last-child .col {
+    border: none;
+}
+
+/* -------------------- */
+/* == Couleur           */
+/* -------------------- */
+
+.back-color-i1{
+	background: #000;
+}
+
+/* -------------------- */
+/* == Framework           */
+/* -------------------- */
+
+.frame-doc-modals{
+	height: 790px;
+	overflow: hidden;
+	width: 950px;
+	margin-bottom : 30px;
+}
+
+.frame-doc-accordion{
+	height: 2160px;
+	overflow: hidden;
+	width: 950px;
+}
+
+/* pour ajuster la taille uniquement sur ie11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+.frame-doc-accordion{
+	height:2200px;
+}
+}

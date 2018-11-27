@@ -1,0 +1,50 @@
+/******************************************************************************************/
+/* == RULE   																			  */
+/******************************************************************************************/
+/* == @todo	: note/commentaire temporaire a supprimer apres livraison					  */
+/* == @bugfix : correction de bug	 													  */
+/* == @note	: commentaire                                                                 */
+/* == @acces : accessibilite		 													  */
+
+/* Info : chaque définition de styles devra être inclus dans la media queries pour 
+des styles sur IE 
+*/
+
+/******************************************************************************************/
+/* == SUMMARY																			  */
+/******************************************************************************************/
+/* == MS specifique - Knacss complement                                                   */
+
+/******************************************************************************************/
+
+/******************************************************************************************/
+/* == MS specifique - Knacss complement                                                   */
+/******************************************************************************************/
+
+/* IE10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    
+    /* Forms
+       ========================================================================== */
+    
+    /* style dropdown arrow */
+    select::-ms-expand {
+        display: none;      
+    }
+    
+    /* style input type checkbox */
+    input[type="checkbox"],
+    input[type="radio"]{
+        /*visibility: hidden;*/
+        width: 0;
+        height: 0;
+    }
+    
+    /* @bugfix flex-item-fluid dans un container flex */
+    [class*="flex-container"]  > .flex-item-fluid[class*="--fix-ms"]{
+        -webkit-box-flex: 1 0 auto;
+                -ms-flex: 1 0 auto;
+                    flex: 1 0 auto;
+    }
+    
+}

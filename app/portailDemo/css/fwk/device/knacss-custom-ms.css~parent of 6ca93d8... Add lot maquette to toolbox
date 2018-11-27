@@ -1,0 +1,53 @@
+/******************************************************************************************/
+/* == RULE   																			  */
+/******************************************************************************************/
+/* == @todo	: note/commentaire temporaire a supprimer apres livraison					  */
+/* == @bugfix : correction de bug	 													  */
+/* == @note	: commentaire                                                                 */
+/* == @acces : accessibilite		 													  */
+
+/* Info : chaque définition de styles devra commencer par .device-windows ou être inclus
+dans la media queries pour des styles sur IE pour être utilisé que sur ce device. 
+Possibilité de d'être plus précis en fonction de la version :
+
+    .device-windowsphone8 :  wp 8 >=
+
+Réf des classes spécifiques fichier devices.js
+
+*/
+
+/******************************************************************************************/
+/* == SUMMARY																			  */
+/******************************************************************************************/
+/* == MS specifique - Knacss complement                                                   */
+
+/******************************************************************************************/
+
+/******************************************************************************************/
+/* == MS specifique - Knacss complement                                                   */
+/******************************************************************************************/
+
+/* IE10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    
+    /* Forms
+       ========================================================================== */
+    
+    /* style dropdown arrow */
+    select::-ms-expand {
+        display: none;      
+    }
+    
+    /* style input type checkbox */
+    input[type="checkbox"],
+    input[type="radio"]{
+        visibility: hidden;
+    }
+    
+    /* @bugfix flex-item-fluid */
+    .flex-container-v > .flex-item-fluid[class*="--fix-ms"]{
+        -webkit-box-flex: 1 0 auto;
+                -ms-flex: 1 0 auto;
+                    flex: 1 0 auto;
+    }
+}
