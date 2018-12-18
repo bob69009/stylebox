@@ -43,20 +43,20 @@ $ npm uninstall --save-dev <modulename>
 - * gulpfile.js * => call the various gulp tasks in the * gulp-task * folder
 - * gulp-task / * => set of [gulp tasks] (## Gulp tasks) available
 - * app / *:
-    - * css / * => toolbox styles and unminified project models
-    - * doc / * => styles of the doc toolbox
-    - * docroot / * => original sources of the project
-    - * fonts *
-    - * images *
-    - * include / * => html layout files that are called by the general Toolbox template (index.html) or a template
-    - * js / * => Toolbox plugins
-    - * lotxxx / * => Development models of the different lots
-    - * output / * => production folder of the Toolbox (do not touch the code)
-    - * scripts *
-        - * vendor * => plugin & external libraries
-    - * styles * => Generation of css via preprocessor: [sass] (http://sass-lang.com/)
-    - * toolbox / * => pages of the Toolbox
-    - * \ *. html *
+ - * css / * => toolbox styles and unminified project models
+ - * doc / * => styles of the doc toolbox
+ - * docroot / * => original sources of the project
+ - * fonts *
+ - * images *
+ - * include / * => html layout files that are called by the general Toolbox template (index.html) or a template
+ - * js / * => Toolbox plugins
+ - * lotxxx / * => Development models of the different lots
+ - * output / * => production folder of the Toolbox (do not touch the code)
+ - * scripts *
+  - * vendor * => plugin & external libraries
+ - * styles * => Generation of css via preprocessor: [sass] (http://sass-lang.com/)
+ - * toolbox / * => pages of the Toolbox
+ - * \ *. html *
     
 To include a layout in an html page:
 `` `
@@ -73,14 +73,14 @@ Tasks * gulp *:
 - * clean *: delete the directory ** dist / **
 - * sass *: compiles * .scss * files into * .css *
 - * serve *:
-    - Create a local server for the models: ** localhost: 9004 ** to visualize the project
-    - For each source modifications * .html *, * .scss *, * .js *: update the browser
+ - Create a local server for the models: ** localhost: 9004 ** to visualize the project
+ - For each source modifications * .html *, * .scss *, * .js *: update the browser
 - * servetool *:
-    - Create a local server for the toolbox: ** localhost: 9004 ** to view the project
-    - Only use the app folder /
-    - Copy all ** app / ** resources in ** output / ** which is the final remote directory of the Toolbox
-    - For each source changes in app / ** -> ** * .html *, * .scss *, * .css * (fwk-Toolbox), * .js *: update the ** output / * folder *
-    - For each source modifications in output / ** -> ** * .html *, * .scss *, * .css *, * .js *: update the browser
+ - Create a local server for the toolbox: ** localhost: 9004 ** to view the project
+ - Only use the app folder /
+ - Copy all ** app / ** resources in ** output / ** which is the final remote directory of the Toolbox
+ - For each source changes in app / ** -> ** * .html *, * .scss *, * .css * (fwk-Toolbox), * .js *: update the ** output / * folder *
+ - For each source modifications in output / ** -> ** * .html *, * .scss *, * .css *, * .js *: update the browser
 - * clean2 *: delete the ** output / ** directory
 
 If the command fails, install the missing gulp packages:
