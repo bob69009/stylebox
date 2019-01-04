@@ -123,11 +123,6 @@ gulp.task('servetool', ['extend', 'extendToolbox', 'extendMaquette', 'sass','cop
 
     gulp.watch([
          config.src + 'maquette/scripts/**/*.js',
-         config.src + 'maquette/lot1/**/*.html',
-         config.src + 'maquette/lot2.1a/**/*.html',
-         config.src + 'maquette/lot2.1b/**/*.html',
-         config.src + 'maquette/lotA2GA/**/*.html',
-         config.src + 'maquette/lotCollecteMail/**/*.html',
          config.src + 'maquette/*.html'
     ], ['extendMaquette']);
 
