@@ -10,13 +10,10 @@ Install development tools:
 ### 2. Recover the sources
 Clone the repository:
 
-
-
 `` `
 $ git clone https://github.com/bob69009/stylebox.git
-
-
 `` `
+
 ### 3. Install the dependencies
 Install the modules with [npm] (https://npmjs.org):
 `` `Bash
