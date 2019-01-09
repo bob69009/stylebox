@@ -10,10 +10,9 @@ Install development tools:
 ### 2. Recover the sources
 Clone the repository:
 
-ssh
-> Configure git to enable ssh authentication [here] (https://github.com/bob69009/stylebox/README)
 
-`` `Sh
+
+`` `
 $ git clone https://github.com/bob69009/stylebox.git
 
 
