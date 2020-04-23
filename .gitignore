@@ -1,0 +1,29 @@
+# dependencies
+/node_modules
+/app/battle/node_modules
+/app/battle/.pnp
+/app/battle/README.md
+/app/battle/.pnp.js
+/app/battle/package-lock.json
+/app/battle/yarn.lock
+
+# testing
+/app/battle/coverage
+
+# production
+/app/battle/build
+
+# misc
+/app/battle/public/
+/app/.DS_Store
+/app/battle/.DS_Store
+/app/battle/.env.local
+/app/battle/.env.development.local
+/app/battle/.env.test.local
+/app/battle/.env.production.local
+
+/app/battle/npm-debug.log*
+/app/battle/yarn-debug.log*
+/app/battle/yarn-error.log*
+
+
