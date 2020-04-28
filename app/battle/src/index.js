@@ -4,9 +4,10 @@ import './App.css';
 import './css/vendor.css';
 import './css/styles.css';
 import App from './App';
+import Game from './Game';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Game />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
