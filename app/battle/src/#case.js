@@ -4,17 +4,27 @@ import React from 'react'
 
 import Player from './Player'
 
-let state = {  case:     55,    number:   1,    life:     75,    position: 55,    bonus1:   [2,33],     bonus3:   [1,2],     bonus2:   [0,0],     bonus4:   [0,0],     bonus5:   [0,0],     bonus6:   [0,0],     bonus7:   [0,0]}
-let state2 = {    case:     61,    number:   2,    life:     90,    position: 61,    bonus1:   [1,22],     bonus3:   [0,0],     bonus2:   [0,0],     bonus4:   [0,0],    bonus5:   [0,0],     bonus6:   [0,0],     bonus7:   [0,0]}
+let state = {
+    case:     55,
+    number:   1,
+    life:     100,
+    position: 55,
+    bonus1:   [0,0], 
+    bonus3:   [0,0], 
+    bonus2:   [0,0], 
+    bonus4:   [0,0], 
+    bonus5:   [0,0], 
+    bonus6:   [0,0], 
+    bonus7:   [0,0]
+}
 let player1Pos = 55
 let player2Pos = 61
 let player1Life = 100
 let player2Life = 100
-let p1bonus1 = [0, 0], p1bonus2 = [0, 0], p1bonus3 = [0, 0], p1bonus4 = [0, 0], p1bonus5 = [0, 0], p1bonus6 = [0, 0], p1bonus7 = [0, 0], p2bonus1 = [0, 0], p2bonus2 = [0, 0], p2bonus3 = [0, 0], p2bonus4 = [0, 0], p2bonus5 = [0, 0], p2bonus6 = [0, 0], p2bonus7 = [0, 0]
+let {p1bonus1, p1bonus2, p1bonus3, p1bonus4, p1bonus5, p1bonus6, p1bonus7, p2bonus1, p2bonus2, p2bonus3, p2bonus4, p2bonus5, p2bonus6, p2bonus7} = [0, 0]
 
 let style = ''
-let test = [state,state2]
-let infoPlayer = [state,state2]
+let infoPlayer = [state,state]
 
 
 class Case extends React.Component {
@@ -26,9 +36,8 @@ class Case extends React.Component {
         this.action = this.props.actions
         this.stepNumber = this.props.stepNumber
         this.value = this.props.case
-        this.guesses = this.props.guesses
         this.state = {
-            infoPlayer: infoPlayer,
+            infoPlayer: [],
             value: this.props.case
         }
     }
@@ -102,7 +111,9 @@ class Case extends React.Component {
         let life = 0
         let opponent = 0
         if (player === 0) { opponent = 1 } else { opponent = 0 }
-        
+
+        console.log("_actionPlayer,  = " + infoPlayer[player].number + "position = " + infoPlayer[player].position)
+
         switch (this.props.actions[infoPlayer[player].position]) {
             case 1:
                 player === 0 ? player1Life = player1Life - 40 : player2Life = player2Life - 40
@@ -239,24 +250,6 @@ class Case extends React.Component {
 
     }
 
-    _bonusDec() {
-        p1bonus1[1]-1 >= 1 ? p1bonus1 = [2,  p1bonus1[1]-1] : p1bonus1 = [0,0]
-        p1bonus2[1]-1 >= 1 ? p1bonus2 = [3,  p1bonus2[1]-1] : p1bonus2 = [0,0]
-        p1bonus3[1]-1 >= 1 ? p1bonus3 = [7,  p1bonus3[1]-1] : p1bonus3 = [0,0]
-        p1bonus4[1]-1 >= 1 ? p1bonus4 = [8,  p1bonus4[1]-1] : p1bonus4 = [0,0]
-        p1bonus5[1]-1 >= 1 ? p1bonus5 = [9,  p1bonus5[1]-1] : p1bonus5 = [0,0]
-        p1bonus6[1]-1 >= 1 ? p1bonus6 = [11,  p1bonus6[1]-1] : p1bonus6 = [0,0]
-        p1bonus7[1]-1 >= 1 ? p1bonus7 = [13,  p1bonus7[1]-1] : p1bonus7 = [0,0]
-
-        p2bonus1[1]-1 >= 1 ? p2bonus1 = [2,  p2bonus1[1]-1] : p2bonus1 = [0,0]
-        p2bonus2[1]-1 >= 1 ? p2bonus2 = [3,  p2bonus2[1]-1] : p2bonus2 = [0,0]
-        p2bonus3[1]-1 >= 1 ? p2bonus3 = [7,  p2bonus3[1]-1] : p2bonus3 = [0,0]
-        p2bonus4[1]-1 >= 1 ? p2bonus4 = [8,  p2bonus4[1]-1] : p2bonus4 = [0,0]
-        p2bonus5[1]-1 >= 1 ? p2bonus5 = [9,  p2bonus5[1]-1] : p2bonus5 = [0,0]
-        p2bonus6[1]-1 >= 1 ? p2bonus6 = [11,  p2bonus6[1]-1] : p2bonus6 = [0,0]
-        p2bonus7[1]-1 >= 1 ? p2bonus7 = [13,  p2bonus7[1]-1] : p2bonus7 = [0,0]
-    }
-
     _attackPlayer(player) {
         let damage = 0
         let opponent = 0
@@ -265,23 +258,16 @@ class Case extends React.Component {
         if (player1Pos === player2Pos) { this._diceGame() }
 
         if (this.props.stepNumber > 0) {
-            //si l'atteaque au marteau se précise
-            if (infoPlayer[player].bonus6[1] > 0 ) {
+            /* if (infoPlayer[player].bonus6.length > 0 ) {
                  if (this._checkPosPlayer() && infoPlayer[opponent].bonus3[1] === 0 ) {
                      damage = -30
                  }
-             } 
+             } */
             if (this.props.actions.length >= infoPlayer[player].position) {
-                console.log("intention dattack  " + this.props.actions[infoPlayer[player].position])
                 this._actionPlayer(infoPlayer, player)
             }
-
         }
 
-        if (this.props.stepNumber%2 ==0 && this.props.guesses > 1) {
-            this._bonusDec()
-            console.log("bonus dec")
-        }
 
     }
 
@@ -289,37 +275,34 @@ class Case extends React.Component {
         const tab = []
         if (infoPlayer.length < 2) {
             infoPlayer = infoPlayer.concat(infos)
+
         }
-        else  {
-            infoPlayer = tab.concat(infos)   
+        else {
+            infoPlayer = tab.concat(infos)
         }
+
+       // console.log(infoPlayer.length)
     }
 
-    _renderPlayer(i, position, index, life, bonus1, bonus2, bonus3, bonus4, bonus5, bonus6, bonus7) {
-            return <Player playerNumber={i} life={life} position={position} case={index} 
-            bonus1={bonus1} bonus2={bonus2} bonus3={bonus3} bonus4={bonus4} bonus5={bonus5} bonus6={bonus6} bonus7={bonus7}
-            getInfo={(i) => this._playerInfo(i)} />
-        
+    _renderPlayer(i, position, index, life, bonus1, bonus2, bonus3, bonus4, bonus5, bonus6) {
+        return <Player playerNumber={i} life={life} position={position} case={index} bonus1={bonus1} bonus2={bonus2} bonus3={bonus3} bonus4={bonus4} bonus5={bonus5} bonus6={bonus6} getInfo={(i) => this._playerInfo(i)} />;
     }
 
     _changePlayerPosition(PlayerPosition) {
-        //console.log("_changePLayerPosition")
+
         let position = null
-        // on recupère la position du joueur en cours
-       // !this.props.click ? position = player1Pos : position = PlayerPosition
+        !this.props.click ? position = player1Pos : position = PlayerPosition
 
         if (!this.props.xIsNext && player1Pos !== this.props.playerPos) {
             player1Pos = this.props.playerPos
-            this._attackPlayer(1)
+            //this._attackPlayer(1)
         } else if (this.props.xIsNext && player2Pos !== this.props.playerPos) {
             player2Pos = this.props.playerPos
-            this._attackPlayer(0)
+            //this._attackPlayer(0)
         }
-        
     }
 
     _displayCase(PlayerPosition) {
-        //console.log("_displayCase")
         if (this._calculatePosition(PlayerPosition, this.props.case, 1)) {
 
             this.props.actions.length > 0 && this.state.value < this.props.actions.length ?
@@ -333,7 +316,7 @@ class Case extends React.Component {
         }
 
         return (
-            <button className={style} tabIndex={1} getinfo={this.props.infoPlayer(infoPlayer)} onClick={this.props.boardCaseClick}> </button>
+            <button className={style} tabIndex={1}  onClick={this.props.boardCaseClick(infoPlayer)}> </button>
         )
     }
 
@@ -342,19 +325,12 @@ class Case extends React.Component {
         return (
             <div className={`square ${this.props.index}`} >
 
-
+                {player1Pos === this.props.case ? this._renderPlayer(1, player1Pos, this.props.case, player1Life, p1bonus1, p1bonus2, p1bonus3, p1bonus4, p1bonus5, p1bonus6, p1bonus7) : null}
+                {player2Pos === this.props.case ? this._renderPlayer(2, player2Pos, this.props.case, player2Life, p2bonus1, p2bonus2, p2bonus3, p2bonus4, p2bonus5, p2bonus6, p2bonus7) : null}
                 {this._changePlayerPosition(this.props.playerPos)}
-                
                 {this._displayCase(
                     this.props.xIsNext ? player1Pos : player2Pos
                 )}
-
-                {player1Pos === this.props.case ? 
-                this._renderPlayer(1, player1Pos, this.props.case, player1Life,p1bonus1,p1bonus2,p1bonus3,p1bonus4,p1bonus5,p1bonus6,p1bonus7) : null}
-                {player2Pos === this.props.case ? 
-                this._renderPlayer(2, player2Pos, this.props.case, player2Life,p2bonus1,p2bonus2, p2bonus3,p2bonus4,p2bonus5,p2bonus6,p2bonus7) : null}
-                
-               
 
 
             </div>

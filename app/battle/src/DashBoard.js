@@ -1,51 +1,80 @@
 
 import React from 'react'
 
-import BonuPlayer1 from './BonusPlayer1'
-import BonuPlayer2 from './BonusPlayer2'
+import BonusPlayer from './BonusPlayer'
 
+const speed = 1
+let end = false
+class DashBoard extends React.Component {
+    constructor(props) {
+      super(props)
+        this.infoPlayer = this.props.infoPlayer
+        this.state ={
+          progress: this.props.progress
+        }
+    }
 
-const DashBoard = ({ player1Life, player2Life, 
-  player1Bonus1, player1Bonus2, player1Bonus3, player1Bonus4, player1Bonus5, player1Bonus6, player1Bonus7, 
-  player2Bonus1, player2Bonus2, player2Bonus3, player2Bonus4, player2Bonus5, player2Bonus6, player2Bonus7, 
-  progress, guesses }) => (
+    componentDidMount() {
+      if (this.props.infoPlayer[0].life > 0 && this.props.infoPlayer[1].life > 0) {
+        this.interval = setInterval(() => this._frame(), 100)
+      }
+    }
   
-    <section className="dashboard grid-2 has-gutter">
-      <div className="col-all">
-        <h5 className="txtcenter alert">BATTLE MONKEYS</h5>
-      </div>
-      <div>
-        <span className="alert--danger txtleft"><span className="pls prs"> Player 1</span></span> 
-        <progress className="player-1 html5" max="100" value={player1Life} label={`${player1Life}%`}></progress>
-        <BonuPlayer1 
-          player1Bonus1={player1Bonus1}
-          player1Bonus2={player1Bonus2}
-          player1Bonus3={player1Bonus3}
-          player1Bonus4={player1Bonus4}
-          player1Bonus5={player1Bonus5}
-          player1Bonus6={player1Bonus6}
-          player1Bonus7={player1Bonus7}
-        />
-      </div>
-      <div>
-        <span className="alert--success"><span className="pls prs">Player 2</span></span>
-        <progress className="player-2 python" max="100" value={player2Life}></progress>
-        <BonuPlayer2
-          player2Bonus1={player2Bonus1}
-          player2Bonus2={player2Bonus2}
-          player2Bonus3={player2Bonus3}
-          player2Bonus4={player2Bonus4}
-          player2Bonus5={player2Bonus5}
-          player2Bonus6={player2Bonus6}
-          player2Bonus7={player2Bonus7}
-        />
-      </div>
-      <div className="col-all timeline">
-        Tour : {guesses}
-        <progress className="css3" max="100" value={progress}></progress>
-      </div>
-    </section>
-) 
+    componentWillUnmount() {
+      clearInterval(this.interval);
+      this.setState({
+        progress: 100
+      })
+    }
+
+    _frame() {
+        if (this.state.progress > 0){
+          this.setState((prevState) => ({
+            progress: prevState.progress - speed
+          }));      
+        }
+        end = this.props.end
+        if (this.state.progress === 0 && this.props.infoPlayer[0].life >= 0 && this.props.infoPlayer[1].life >= 0){
+           
+            this.componentWillUnmount()
+            setTimeout(() => {  this.componentDidMount()  }, 2000);
+              
+            end = true
+        }
+    }
+
+    
+
+    render () {
+
+      return (
+        
+        <section className="dashboard grid-2 has-gutter">
+          <div className="col-all">
+            <h5 className="txtcenter alert">BATTLE MONKEYS</h5>
+          </div>
+          <div>
+            <span className="alert--danger txtleft"><span className="pls prs"> Player 1, life : {this.props.infoPlayer[0].life}, bonus1 =  {this.props.infoPlayer[0].bonus1}</span></span> 
+            <progress className="player-1 html5" max="100" value={this.props.infoPlayer[0].life} label={`${this.props.infoPlayer[0].life}%`}></progress>
+            <BonusPlayer
+              infoPlayer={this.props.infoPlayer[0]}
+            />
+          </div>
+          <div>
+            <span className="alert--success"><span className="pls prs">Player 2</span></span>
+            <progress className="player-2 python" max="100" value={this.props.infoPlayer[1].life}></progress>
+            <BonusPlayer
+              infoPlayer={this.props.infoPlayer[1]}
+            />
+          </div>
+          <div className="col-all timeline">
+            Tour : {this.props.guesses}
+            <progress className="css3" max="100" value={this.state.progress} label={this.props.getInfo(end.toString())}></progress>
+          </div>
+        </section>
+      )
+    }
+}
 
 
 export default DashBoard

@@ -27,7 +27,7 @@ class Game extends Component {
     }   
 
    _gameCaseClick(result) {
-       console.log('tareuss est a la position = '+ result);
+      // console.log('tareuss est a la position = '+ result);
        
    }
 
